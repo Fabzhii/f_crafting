@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    position: absolute;
+    color: #dc5f00b9;
+    font-weight: bold;
+    font-size: 230%;
+    text-align: center;
+    top: 5%;
+    width: 20%;
+    left: 40%;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#container {
+
+    visibility: hidden;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1920px; 
+    height: 1080px; 
+    overflow: hidden;
+}
+
+#categories{
+    position: absolute;
+    height: 5%;
+    width: 30%;
+    left: 35%;
+    top: 76.5%;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.categorie-element{
+    color: aliceblue;
+    background-color: #686d76b7;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#main-crafting {
+    position: absolute;
+    height: 60%;
+    width: 90%;
+    left: 5%;
+    top: 15%;
+}
+
+#main-queue{
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background-color: #686d76b7;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#main-requirements{
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background-color: #686d76b7;
+    border-radius: 10px;
+    right: 0%;
+    text-align: center;
+}
+
+#clear-queue{
+    position: absolute;
+    height: 8%;
+    width: 25%;
+    background-color: #dc5f00b9;
+    top: 102%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#craft{
+    position: absolute;
+    height: 8%;
+    width: 25%;
+    background-color: #dc5f00b9;
+    right: 0%;
+    top: 102%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#main-body {
+    position: absolute;
+    width: 40%;
+    left: 30%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    grid-auto-rows: calc((120% - 5px) / 5); 
+    overflow: auto; 
+    gap: 5px; 
+    padding-right: 0.8%;
+    scrollbar-width: thin; 
+    scrollbar-color: #888 #88888800; 
+    overflow: auto;
+
+    height: 80%;
+}
+
+#main-body::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;  
+}
+
+
+.item {
+    flex: 0 0 calc(20% - 12px); 
+    box-sizing: border-box; 
+    height: 100%;
+    background-color: #686d76b7;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.text {
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#item-name{
+    visibility: hidden;
+    position: relative;
+    top: 5%;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#item-loop{
+    position: relative;
+    top: 5%;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#item-edit{
+    position: relative;
+    color: aliceblue;
+    font-weight: bold;
+    top: 25%;
+}
+
+.item-info-text{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+#time{
+    left: 13%;
+}
+
+#amount{
+    right: 13%;
+}
+
+.item-info{
+    position: absolute;
+    top: 16%;
+    width: 30%;
+    background-color: #373a40ab;
+    border-radius: 10px;
+}
+
+#line{
+    position: absolute;
+    background-color: aliceblue;
+    width: 94%;
+    height: 0.3%;
+    left: 3%;
+    top: 25%;
+}
+
+#line2{
+    position: absolute;
+    background-color: aliceblue;
+    width: 94%;
+    height: 0.3%;
+    left: 3%;
+    top: 15%;
+}
+
+
+#requirement-info{
+    position: absolute;
+    top: 30%;
+    width: 90%;
+    left: 5%;
+    height: 20%;
+    gap: 1%;
+    display: grid;
+}
+
+.requirement{
+    box-sizing: border-box; 
+    border-radius: 10px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 120%;
+    margin-left: -10%;
+}
+
+.requirement-img{
+    position: absolute;
+    height: 40%;
+    left: 10%;
+    margin-top: -2%;
+    margin-left: -2%;
+}
+
+#queue-body {
+    position: absolute;
+    top: 20%;
+    width: 90%;
+    left: 5%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto; 
+}
+
+#queue-body::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;  
+}
+
+.waiting {
+    background-color: #373a40ab;
+    height: 50px; 
+    margin: 0 5%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0; 
+}
+
+.waiting-img {
+    position: absolute;
+    height: 50px; 
+    left: 25px;
+    margin-left: 5px;
+}
+
+.waiting:hover {
+    background-color: #dc5f0067;
+}
+
+#time{
+    visibility: hidden;
+}
+
+#amount{
+    visibility: hidden;
+}
+
