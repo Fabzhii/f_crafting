@@ -38,7 +38,6 @@ Config.CraftingLocations = {
                             {'id-card', 1},
                         },
                         requiredTime = 10,
-                        failureChance = 10,
                     },
                     {    
                         output = {'money', 3},
@@ -46,7 +45,6 @@ Config.CraftingLocations = {
                             {'black_money', 5},
                         },
                         requiredTime = 5,
-                        failureChance = 5,
                     },
                 },
             },
@@ -60,7 +58,6 @@ Config.CraftingLocations = {
                             {'water', 1},
                         },
                         requiredTime = 10,
-                        failureChance = 10,
                     },
                 },
             },
