@@ -1,2 +1,9 @@
 # f_crafting
-FiveM Crafting System
+FiveM Crafting system with exports.
+
+## Export
+
+``
+exports[f_crafting]:openCraftingStation(data, categorie, item)
+
+``
