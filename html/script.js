@@ -94,6 +94,7 @@ showMenu = function(categories, table, queue, selectedCategorie, title, item, pa
 
             const img = document.createElement('img');
             img.src = path + item.item + ".png";
+            img.className = 'item-img';
             img.alt = item.img; 
             div.appendChild(img);
 
