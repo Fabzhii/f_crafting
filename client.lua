@@ -16,6 +16,9 @@ Citizen.CreateThread(function()
     while true do 
         if craftingPosition ~= nil then 
             if (#(GetEntityCoords(PlayerPedId()) - craftingPosition) > Config.CraftingRadius) and json.encode(craftingQueue) ~= '[]' then 
+                for k,v in pairs(craftingQueue) do 
+                    TriggerServerEvent('fcrafting:addRequirements', v.requirements)
+                end 
                 craftingQueue = {}
                 Config.Notifcation(Config.Translation['too_far'])
             end 
@@ -26,20 +29,12 @@ Citizen.CreateThread(function()
             if craftingQueue[1].time <= 0 then 
                 TriggerServerEvent('fcrafting:craftItem', craftingQueue[1])
                 table.remove(craftingQueue, 1)
+                Config.Notifcation(Config.Translation['item_crafted'])
             end 
 
         end 
 
         Citizen.Wait(1000)
-    end 
-end)
-
-RegisterNetEvent('fcrafting:result')
-AddEventHandler('fcrafting:result', function(result)
-    if result then 
-        Config.Notifcation(Config.Translation['item_crafted'])
-    else 
-        Config.Notifcation(Config.Translation['item_craft_failed'])
     end 
 end)
 
@@ -323,6 +318,8 @@ RegisterNUICallback('craft', function(data, cb)
         end 
     end 
     if not cancelRequirements then 
+        TriggerServerEvent('fcrafting:removeRequirements', item.requirements)
+
         table.insert(craftingQueue, {
             item = item.item,
             label = item.name,
@@ -340,6 +337,9 @@ end)
 RegisterNUICallback('clear', function(data, cb)
     local itemnumber = data.returnValue[2] + 1
     local selectedCategorie = data.returnValue[1]
+    for k,v in pairs(craftingQueue) do 
+        TriggerServerEvent('fcrafting:addRequirements', v.requirements)
+    end 
     craftingQueue = {}
     exports[GetCurrentResourceName()]:openCraftingStation(currentData, selectedCategorie, itemnumber)
     cb({})
