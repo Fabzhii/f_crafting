@@ -70,7 +70,6 @@ Config.Translation = {
     ['no_requirements'] = {'Du hast nicht die benötigten Gegenstände!', 'error'},
     ['too_far'] = {'Du hast dich zu weit vom Crafter entfernt!', 'error'},
     ['item_crafted'] = {'Du hast einen Gegenstand hergestellt!', 'success'},
-    ['item_craft_failed'] = {'Der Herstellungsprozess ist fehlgeschlagen!', 'error'},
     ['queue_cleared'] = {'Du hast die Crafting Warteschlange geleert!', 'info'},
 }
 
