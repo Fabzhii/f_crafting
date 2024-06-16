@@ -6,19 +6,19 @@ end)
 
 RegisterServerEvent('fcrafting:craftItem')
 AddEventHandler('fcrafting:craftItem', function(item)
-    local cancelRequirements = false
-    for k,v in pairs(item.requirements) do 
-        if exports.ox_inventory:GetItemCount(source, v.item) < v.amount then 
-            cancelRequirements = true
-        end 
-    end 
-    if not cancelRequirements then 
-        for k,v in pairs(item.requirements) do 
-            exports.ox_inventory:RemoveItem(source, v.item, v.amount)
-        end 
-        exports.ox_inventory:AddItem(source, item.item, item.amount)
-        TriggerClientEvent('fcrafting:result', source, true)
-    else 
-        TriggerClientEvent('fcrafting:result', source, false)
-    end
+    exports.ox_inventory:AddItem(source, item.item, item.amount)
 end)    
+
+RegisterServerEvent('fcrafting:removeRequirements')
+AddEventHandler('fcrafting:removeRequirements', function(requirements)
+    for k,v in pairs(requirements) do 
+        exports.ox_inventory:RemoveItem(source, v.item, v.amount)
+    end 
+end)   
+
+RegisterServerEvent('fcrafting:addRequirements')
+AddEventHandler('fcrafting:addRequirements', function(requirements)
+    for k,v in pairs(requirements) do 
+        exports.ox_inventory:AddItem(source, v.item, v.amount)
+    end 
+end)  
