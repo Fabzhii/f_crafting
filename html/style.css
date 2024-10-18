@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 
+:root{
+    --body: rgba(20, 20, 20, 0.6);
+    --body2: rgba(85,147,232, 0.6);
+    --green: rgb(29, 175, 87);
+    --blue: rgb(48, 106, 224);
+    --red: rgb(212, 57, 66);
+    --purple: rgb(214, 50, 201);
+    --grey: rgb(61, 56, 61);
+    --yellow: rgb(233, 222, 69);
+    --orange: rgb(207, 125, 31);
+    --border: rgb(134, 144, 160);
+    --text: rgb(244, 252, 255);
+}
+
 * {
     font-family: "Schibsted Grotesk", sans-serif;
     font-optical-sizing: auto;
@@ -14,7 +28,7 @@
 
 #header{
     position: absolute;
-    color: #dc5f00b9;
+    color: var(--blue);
     font-weight: bold;
     font-size: 230%;
     text-align: center;
@@ -56,8 +70,8 @@ body, html {
 }
 
 .categorie-element{
-    color: aliceblue;
-    background-color: #686d76b7;
+    color: var(--text);
+    background-color: var(--body);
     width: 100%;
     height: 100%;
     display: flex;
@@ -79,7 +93,7 @@ body, html {
     position: absolute;
     height: 100%;
     width: 25%;
-    background-color: #686d76b7;
+    background-color: var(--body);
     border-radius: 10px;
     text-align: center;
 }
@@ -88,7 +102,7 @@ body, html {
     position: absolute;
     height: 100%;
     width: 25%;
-    background-color: #686d76b7;
+    background-color: var(--body);
     border-radius: 10px;
     right: 0%;
     text-align: center;
@@ -98,7 +112,7 @@ body, html {
     position: absolute;
     height: 8%;
     width: 25%;
-    background-color: #dc5f00b9;
+    background-color: var(--body2);
     top: 102%;
     border-radius: 10px;
     text-align: center;
@@ -108,7 +122,7 @@ body, html {
     position: absolute;
     height: 8%;
     width: 25%;
-    background-color: #dc5f00b9;
+    background-color: var(--body2);
     right: 0%;
     top: 102%;
     border-radius: 10px;
@@ -142,7 +156,7 @@ body, html {
     flex: 0 0 calc(20% - 12px); 
     box-sizing: border-box; 
     height: 100%;
-    background-color: #686d76b7;
+    background-color: var(--body);
     border-radius: 10px;
     text-align: center;
 }
@@ -151,12 +165,22 @@ body, html {
     position: relative;
     height: 100px;
     width: 100px;
-    left: -0%;
+    left: 13%;
+    /* background-color: red; */
+}
+
+.item-img-img{
+    position: relative;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%); 
+    width: 80%;
+    height: 80%;
 }
 
 
 .text {
-    color: aliceblue;
+    color: var(--text);
     font-weight: bold;
 }
 
@@ -164,49 +188,51 @@ body, html {
     visibility: hidden;
     position: relative;
     top: 5%;
-    color: aliceblue;
+    color: var(--text);
     font-weight: bold;
 }
 
 #item-loop{
     position: relative;
     top: 5%;
-    color: aliceblue;
+    color: var(--text);
     font-weight: bold;
 }
 
 #item-edit{
     position: relative;
-    color: aliceblue;
+    color: var(--text);
     font-weight: bold;
     top: 25%;
 }
 
 .item-info-text{
-    color: aliceblue;
+    color: var(--text);
     font-weight: bold;
     font-size: 110%;
 }
 
 #time{
     left: 13%;
+    background-color: var(--body2);
 }
 
 #amount{
     right: 13%;
+    background-color: var(--body2);
 }
 
 .item-info{
     position: absolute;
     top: 16%;
     width: 30%;
-    background-color: #373a40ab;
+    background-color: var(--body);
     border-radius: 10px;
 }
 
 #line{
     position: absolute;
-    background-color: aliceblue;
+    background-color: var(--text);
     width: 94%;
     height: 0.3%;
     left: 3%;
@@ -215,7 +241,7 @@ body, html {
 
 #line2{
     position: absolute;
-    background-color: aliceblue;
+    background-color: var(--text);
     width: 94%;
     height: 0.3%;
     left: 3%;
@@ -228,23 +254,28 @@ body, html {
     top: 30%;
     width: 90%;
     left: 5%;
-    height: 20%;
+    height: 65%;
     gap: 1%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
 .requirement{
+    padding-left: 120px;
     box-sizing: border-box; 
     border-radius: 10px;
-    text-align: center;
+    justify-content: left;
+    display: flex;
+    align-items: center; 
     color: aliceblue;
     font-size: 120%;
     margin-left: -10%;
+    height: 40px;
 }
 
 .requirement-img{
     position: absolute;
-    height: 50px;
+    height: 40px;
     left: 10%;
     margin-top: -2%;
     margin-left: -2%;
@@ -268,13 +299,14 @@ body, html {
 }
 
 .waiting {
-    background-color: #373a40ab;
+    background-color: var(--body);
     height: 50px; 
     margin: 0 5%;
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
-    color: aliceblue;
+    color: var(--text);
+    background-color: var(--body2);
     font-size: 120%;
     display: flex;
     justify-content: center;
@@ -285,7 +317,7 @@ body, html {
 
 .waiting-img {
     position: absolute;
-    height: 50px; 
+    height: 40px; 
     left: 25px;
     margin-left: 5px;
 }
