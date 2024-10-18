@@ -1,4 +1,17 @@
 
+const rootStyles = getComputedStyle(document.documentElement);
+const body = rootStyles.getPropertyValue('--body');
+const body2 = rootStyles.getPropertyValue('--body2');
+const green = rootStyles.getPropertyValue('--green');
+const blue = rootStyles.getPropertyValue('--blue');
+const red = rootStyles.getPropertyValue('--red');
+const orange = rootStyles.getPropertyValue('--orange');
+const purple = rootStyles.getPropertyValue('--purple');
+const grey = rootStyles.getPropertyValue('--grey');
+const yellow = rootStyles.getPropertyValue('--yellow');
+const border = rootStyles.getPropertyValue('--border');
+const text = rootStyles.getPropertyValue('--text');
+
 window.addEventListener('message', (event) => {
     const data = event.data;
 
@@ -62,15 +75,15 @@ showMenu = function(categories, table, queue, selectedCategorie, title, item, pa
             categoriesContainer.appendChild(div);
 
             if(selectedCategorie == categorie.type){
-                div.style.backgroundColor = '#dc5f00b9'; 
+                div.style.backgroundColor = body2; 
             }
 
             div.addEventListener('click', () => {
 
                 document.querySelectorAll('.categorie-element').forEach(item => {
-                    item.style.backgroundColor = '#686d76b7'; 
+                    item.style.backgroundColor = body; 
                 });
-                div.style.backgroundColor = '#dc5f00b9'; 
+                div.style.backgroundColor = body2; 
 
                 const returnValue = categorie.type;
                 axios.post(`https://${GetParentResourceName()}/categorie`, {
@@ -92,11 +105,15 @@ showMenu = function(categories, table, queue, selectedCategorie, title, item, pa
             div.appendChild(officerName);
             officerName.className = 'text';
 
+            const imgbox = document.createElement('div');
+            imgbox.className = 'item-img';
+            div.appendChild(imgbox);
+
             const img = document.createElement('img');
             img.src = path + item.item + ".png";
-            img.className = 'item-img';
+            img.className = 'item-img-img';
             img.alt = item.img; 
-            div.appendChild(img);
+            imgbox.appendChild(img);
 
             div.addEventListener('click', () => {
                 openItem(index);
@@ -151,9 +168,9 @@ showMenu = function(categories, table, queue, selectedCategorie, title, item, pa
             document.getElementById('line').style.visibility = 'visible';
 
             document.querySelectorAll('.item').forEach((item, index) => {
-                item.style.backgroundColor = '#686d76b7'; 
+                item.style.backgroundColor = body; 
             });
-            document.querySelectorAll('.item')[itemnumber].style.backgroundColor = '#dc5f00b9'; 
+            document.querySelectorAll('.item')[itemnumber].style.backgroundColor = body2; 
 
             document.getElementById('item-name').textContent = item.name;
             document.getElementById('info-time').textContent = 'Zeit: ' + item.time;
@@ -167,7 +184,7 @@ showMenu = function(categories, table, queue, selectedCategorie, title, item, pa
             requirements.forEach(requirement => {
                 const div = document.createElement('div');
                 div.className = 'requirement';
-                div.textContent = `${requirement.name} - x${requirement.amount}`;
+                div.textContent = `${requirement.name} - x${requirement.amount} (${requirement.has})`;
                 requirementContainer.appendChild(div);
 
                 const img = document.createElement('img');
