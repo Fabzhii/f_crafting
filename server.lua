@@ -12,13 +12,17 @@ end)
 RegisterServerEvent('fcrafting:removeRequirements')
 AddEventHandler('fcrafting:removeRequirements', function(requirements)
     for k,v in pairs(requirements) do 
-        exports.ox_inventory:RemoveItem(source, v.item, v.amount)
+        if not v.dontRemove then 
+            exports.ox_inventory:RemoveItem(source, v.item, v.amount)
+        end
     end 
 end)   
 
 RegisterServerEvent('fcrafting:addRequirements')
 AddEventHandler('fcrafting:addRequirements', function(requirements)
     for k,v in pairs(requirements) do 
-        exports.ox_inventory:AddItem(source, v.item, v.amount)
+        if not v.dontRemove then 
+            exports.ox_inventory:AddItem(source, v.item, v.amount)
+        end 
     end 
 end)  
