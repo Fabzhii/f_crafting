@@ -260,6 +260,8 @@ function getRequirements(input)
             item = v[1],
             name = getName(v[1]),
             amount = (v[2]),
+            has = getCount(v[1]), 
+            dontRemove = v[3] or false,
         })
     end 
     return requirements
@@ -279,7 +281,7 @@ function getCount(item)
     local count = 0
     for k,v in pairs(exports.ox_inventory:GetPlayerItems()) do 
         if v.name == item then 
-            count = v.count
+            count = count + v.count
         end 
     end 
     return count
