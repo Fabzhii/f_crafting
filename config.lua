@@ -1,16 +1,17 @@
 Config = {}
 
-Config.ImgPath = 'img/'
+Config.ImgPath = 'nui://ox_inventory/web/images/'
 
 Config.DefaultTitle = 'Werkbank'
 Config.RemoveItemsOnFailure = true
 Config.CraftingRadius = 5.0
 
 Config.CraftingLocations = {
+
     {
         locations = {
-            vector3(219.6, -862.5,30.3),
-            vector3(229.6, -866.5,30.3),
+            vector3(958.5643, 3616.1636, 32.7644),
+            vector3(-2314.1997, 259.1409, 169.6019),
         },
         marker = {
             id = 21, 
@@ -19,45 +20,36 @@ Config.CraftingLocations = {
         },
         blip = {
             enabled = true,
-            id = 459,
-            color = 26,
+            id = 402,
+            color = 4,
         },
-        title = 'Werkbank',
+        title = 'Crafter',
         access = {
-            job = {'police', 'sheriff'},
-            grades = {0, 1, 2},
+            job = nil,
+            grades = nil,
         },
         categories = {
             {
-                categoryLabel = 'Geld', 
+                categoryLabel = 'Banane', 
                 carftingRecipes = {
                     {    
-                        output = {'creditcard', 1},
+                        output = {'apple', 1},
                         input = {
-                            {'money', 500},
-                            {'id-card', 1},
+                            {'banana', 1},
                         },
-                        requiredTime = 10,
-                    },
-                    {    
-                        output = {'money', 3},
-                        input = {
-                            {'black_money', 5},
-                        },
-                        requiredTime = 5,
+                        requiredTime = 120,
                     },
                 },
             },
             {
-                categoryLabel = 'Essen', 
+                categoryLabel = 'Apfel', 
                 carftingRecipes = {
                     {    
-                        output = {'pizza_chs', 1},
+                        output = {'banana', 1},
                         input = {
-                            {'noodles', 500},
-                            {'water', 1},
+                            {'apple', 1},
                         },
-                        requiredTime = 10,
+                        requiredTime = 120,
                     },
                 },
             },
